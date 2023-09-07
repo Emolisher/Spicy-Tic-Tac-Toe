@@ -1,0 +1,129 @@
+@font-face {
+  font-family: SpongeB;
+  src: url(../fonts/Spongeboy\ Me\ Bob.ttf);
+}
+@font-face {
+  font-family: Favorit;
+  src: url(../fonts/Favorita.ttf);
+}
+@font-face {
+  font-family: Domino;
+  src: url(../fonts/Domino.ttf);
+}
+body {
+  perspective: 800px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* we need to asign height for aic to work */
+  flex-direction: column;
+}
+#gameboard {
+  width: 300px;
+  height: 300px;
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+}
+.square {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border: solid 2px black;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.circle {
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  border: 15px solid rgb(77, 149, 125);
+  box-sizing: border-box;
+}
+
+.cross {
+  position: relative;
+  height: 90px;
+  width: 90px;
+  transform: rotate(45deg);
+}
+.cross:before,
+.cross:after {
+  position: absolute;
+  content: "";
+  background-color: rgb(164, 117, 17);
+}
+.cross:before {
+  left: 50%;
+  width: 30%;
+  margin-left: -15%;
+  /*relative to the cross  */
+  height: 100%;
+}
+.cross:after {
+  top: 50%;
+  height: 30%;
+  margin-top: -15%;
+  /*relative to the cross  */
+  width: 100%;
+}
+
+#info {
+  font-size: 29px;
+  font-family: 'Rubik Bubbles', cursive;
+  font-weight: 100;
+}
+.btn {
+    margin-top:31px;
+    width: 50%;
+    height: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-bottom: 25%;
+
+    position: relative;
+    height: 50px;
+    width: 150px;
+    transform-style: preserve-3d;
+    transition: transform 300ms ease-in;
+    transform:translateZ(-75px);
+
+}
+ .btn-transition{
+transform: rotateX(-90deg) translateY(25px);
+
+}
+.side{
+    position:absolute;
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    box-sizing: border-box; 
+}
+.default-side {
+    background-color: white;
+    border: 5px solid #069; 
+    color: rgb(67, 71, 71);
+    transform: translateZ(21px);
+
+}
+.hover-side {
+    color: white;
+    background-color: rgb(48, 94, 120);
+    transform: rotateX(90deg) translateZ(25px);
+}
+
+.side , .default-side, .active{
+  font-family: "Domino", cursive;
+  font-size:27px;
+}
